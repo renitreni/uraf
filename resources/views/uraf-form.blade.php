@@ -32,82 +32,140 @@
                                 <hr>
                             </div>
                             <div class="form-group col-md-4">
-                                <label>First Name</label>
+                                <label>First Name<br>
+                                    <i>Pangalan</i></label>
                                 <input class="form-control" name="first_name">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Middle Name</label>
+                                <label>Middle Name<br>
+                                    <i>Panggitnang Apelyido</i></label>
                                 <input class="form-control" name="middle_name">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Last Name</label>
+                                <label>Last Name<br>
+                                    <i>Apelyido</i></label>
                                 <input class="form-control" name="last_name">
                             </div>
                             <div class="form-group col-md-2">
-                                <label>Gender</label>
+                                <label>Gender<br>
+                                    <i>Kasarian</i></label>
                                 <select name="gender" class="form-control">
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Occupation</label>
-                                <input class="form-control" name="occupation">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label>Passport Number</label>
+                                <label>Passport Number<br>
+                                    <i>Numero ng Pasaporte</i></label>
                                 <input class="form-control" name="passport">
                             </div>
                             <div class="form-group col-md-2">
-                                <label>IQAMA</label>
+                                <label>IQAMA<br>
+                                    <i>Numero ng IQAMA</i></label>
                                 <input class="form-control" name="iqama">
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <h2>Contact Information</h2>
+                                <h2>Occupation <i>Okupasyon</i></h2>
+                                <hr>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="occupation"
+                                           value="House Service Workers"
+                                           checked>
+                                    <label class="form-check-label">
+                                        House Service Workers (e.g. Domestic Worker, Driver, Gardener etc.)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="occupation"
+                                           value="Highly Skilled"
+                                           checked>
+                                    <label class="form-check-label">
+                                        Highly Skilled (e.g. Wielder, Plumber, Beautician, Office Worker, Assistant
+                                        Nurse,
+                                        Computer Technician etc.)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="occupation" value="Low Skilled"
+                                           checked>
+                                    <label class="form-check-label">
+                                        Low Skilled (e.g. Construction Worker, Laborers, Cook and Waiter etc.)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="occupation" value="Nurse"
+                                           checked>
+                                    <label class="form-check-label">
+                                        Nurse
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="occupation"
+                                           value="Skilled Professional"
+                                           checked>
+                                    <label class="form-check-label">
+                                        Skilled Professional (e.g. Engineer, Doctor, Dentist, Architects, Accountants
+                                        etc.)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 mt-2">
+                                <h2>Contact Information <i>Impormasyon ng Pakikipag-ugnay</i></h2>
                                 <hr>
                             </div>
                             <div class="form-group col-md-4">
-                                <label>E-mail</label>
-                                <input type="email" class="form-control" name="email_address">
+                                <label>E-mail or Facebook Name<br>
+                                    <i>E-mail o Pangalan sa Facebook</i></label>
+                                <input class="form-control" name="email_address">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Primary Contact Number</label>
+                                <label>Primary Contact Number (If Any)<br>
+                                    <i>Personal na Telepono (Kung Meron)</i></label>
                                 <input class="form-control" name="contact_number">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Other Contact Number</label>
+                                <label>Other Contact Number (If Any)<br>
+                                    <i>Ibang pang Telepono (Kung Meron)</i></label>
                                 <input class="form-control" name="contact_number2">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Location KSA</label>
+                                <label>Location KSA<br><i>Lokasyon sa Saudi</i></label>
                                 <input class="form-control" name="location_ksa">
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <h2>Employer Information</h2>
+                                <h2>Employer Information <i>Impormasyon ng Amo</i></h2>
                                 <hr>
                             </div>
                             <div class="form-group col-md-8">
-                                <label>Employer Name</label>
+                                <label>Employer Name<br>
+                                    <i>Pangalan ng Amo</i></label>
                                 <input class="form-control" name="employer_name">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Employer Contact Number</label>
+                                <label>Employer Contact Number (If Known)<br>
+                                    <i>Telepono ng Amo (Kung Alam)</i></label>
                                 <input class="form-control" name="employer_contact">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Saudi Agency</label>
+                                <label>Recruitment Agency in Saudi (If Known)<br>
+                                    <i>Ahensya sa Saudi (Kung Alam)</i></label>
                                 <input class="form-control" name="saudi_agency">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Agency</label>
+                                <label>Recruitment Agency in Philippines (If Known)<br>
+                                    <i>Ahensya sa Pilipinas (Kung Alam)</i>
+                                </label>
                                 <input class="form-control" name="agency">
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <h2>Complaint Section</h2>
+                                <h2>Complaint <i>Reklamo</i></h2>
                                 <hr>
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <label>Please provide us your concerns below. (Please allow "Know your location" in the browser)</label>
+                                <label>Please provide us your concerns below. (Please allow "Know your location" in the
+                                    browser)</label>
                                 <textarea class="form-control" name="complain" rows="6"
                                           style="resize: none;"></textarea>
                             </div>
@@ -130,12 +188,10 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-2">
-                                <label>Latitude</label>
-                                <input class="form-control" name="actual_langitude" readonly>
+                                <input class="form-control" name="actual_langitude" hidden>
                             </div>
                             <div class="form-group col-md-2">
-                                <label>Longtitude</label>
-                                <input class="form-control" name="actual_longitude" readonly>
+                                <input class="form-control" name="actual_longitude" hidden>
                             </div>
                             <div class="form-group col-md-12 mt-3">
                                 <button id="cb-btn" type="submit" class="btn btn-success btn-block" disabled>
@@ -147,15 +203,22 @@
                 </div>
             </div>
         </section><!-- End About Us Section -->
+
+        <!-- ======= Map Section ======= -->
+        <section class="map">
+            <div id='map' style='width: 100%; height: 300px;'></div>
+        </section><!-- End Map Section -->
+
     </main><!-- End #main -->
 @endsection
 
 @section('scripts')
-    {{--    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>--}}
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
     <script>
         $(document).ready(function () {
-            // $('[name="actual_langitude"]').val(geoplugin_latitude());
-            // $('[name="actual_longitude"]').val(geoplugin_longitude());
+            mapboxgl.accessToken = 'pk.eyJ1IjoicmVuaWVyLXRyZW51ZWxhIiwiYSI6ImNrZHhya2l3aTE3OG0ycnBpOWxlYjV3czUifQ.4hVvT7_fiVshoSa9P3uAew';
+
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
@@ -165,6 +228,15 @@
                 $('[name="actual_langitude"]').val(position.coords.latitude);
                 $('[name="actual_longitude"]').val(position.coords.longitude);
                 $('#cb-btn').removeAttr('disabled');
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    center: [position.coords.longitude, position.coords.latitude],
+                    zoom: 13,
+                    style: 'mapbox://styles/mapbox/streets-v11'
+                });
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([position.coords.longitude, position.coords.latitude])
+                    .addTo(map);
             }
         });
     </script>

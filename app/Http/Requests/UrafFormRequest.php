@@ -30,7 +30,7 @@ class UrafFormRequest extends FormRequest
             "last_name"        => 'required',
             "gender"           => 'required',
             "occupation"       => 'required',
-            "email_address"    => 'required|email',
+            "email_address"    => 'required',
             "contact_number"   => 'required',
             "location_ksa"     => 'required',
             "complain"         => 'required',
