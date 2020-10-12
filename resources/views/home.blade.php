@@ -4,10 +4,10 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h1>Philippine Embassy Riyadh</h1>
-            <h2>Welcome To Our Website</h2>
+            <h1>Philippine Embassy Riyadh (URAF)</h1>
+            <h2>Welcome To Our Official Website</h2>
             <a href="#" id="uraf-btn" class="btn-get-started">
-                Unified Request For Assistance Form (URAF)
+                Unified Request For Assistance Form
             </a>
         </div>
     </section><!-- #hero -->
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="contact-about">
-                            <h4>POLO</h4>
+                            <h4>Philippine Overseas Labor Office</h4>
                             <p>
                                 POLO Riyadh - 050-285-0944 <br>
                                 poloriyadh2010@yahoo.com <br>

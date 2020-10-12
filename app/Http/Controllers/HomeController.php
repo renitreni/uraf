@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\UrafFormRequest;
 use DB;
+use Alert;
 
 class HomeController extends Controller
 {
@@ -62,6 +63,8 @@ class HomeController extends Controller
             "date_created"     => Carbon::now(),
         ]);
 
-        return redirect()->back();
+        Alert::success('Success!', 'URAF has been submmited!');
+
+        return redirect('/');
     }
 }

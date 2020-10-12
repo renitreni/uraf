@@ -8,8 +8,8 @@
         <section id="services" class="services">
             <div class="container">
                 <div class="section-title uraf-form-title">
-                    <h2>Philippine Embassy Riyadh</h2>
-                    <p>Unified Request For Assistance Form (URAF)</p>
+                    <h2>Philippine Embassy Riyadh (URAF)</h2>
+                    <p>Unified Request For Assistance Form</p>
                 </div>
                 <div class="row justify-content-center">
                     @if ($errors->any())
@@ -107,7 +107,7 @@
                                 <hr>
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <label>Please provide us your concerns below</label>
+                                <label>Please provide us your concerns below. (Please allow "Know your location" in the browser)</label>
                                 <textarea class="form-control" name="complain" rows="6"
                                           style="resize: none;"></textarea>
                             </div>
@@ -130,11 +130,11 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-2">
-                                <label>Current Location</label>
+                                <label>Latitude</label>
                                 <input class="form-control" name="actual_langitude" readonly>
                             </div>
-                            <div class="form-group col-md-2 mt-2">
-                                <label></label>
+                            <div class="form-group col-md-2">
+                                <label>Longtitude</label>
                                 <input class="form-control" name="actual_longitude" readonly>
                             </div>
                             <div class="form-group col-md-12 mt-3">

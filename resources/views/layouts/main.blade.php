@@ -36,7 +36,7 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <a href="{{ route('home') }}">
                 <img src="{{ asset('img/embassy-logo.png') }}" alt="" class="img-fluid">
-                <span class="text-light">Philippine Embassy Riyadh</span>
+                <span class="text-light">Philippine Embassy Riyadh (URAF)</span>
             </a>
         </div>
     </div>
@@ -48,9 +48,8 @@
 <footer id="footer">
     <div class="container">
         <div class="copyright">
-            &copy; Copyright @
-            <script>document.write(new Date().getFullYear());</script>
-            YARAMAY COMPUTER MAINTENANCE SERVICES.
+            YARAMAY COMPUTER MAINTENANCE SERVICES
+            <br>Copyright &copy; <script>document.write(new Date().getFullYear());</script>
             <br>All Rights Reserved
         </div>
     </div>
@@ -70,6 +69,7 @@
 <!-- Template Main JS File -->
 <script src="{{ asset('theme/assets/js/main.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 @yield('scripts')
 </body>
 
