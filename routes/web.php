@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form');
+Route::post('/form/send', [HomeController::class, 'urafFormSend'])->name('home.uraf-form.send');

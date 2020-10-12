@@ -1055,7 +1055,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #073839;
+    background: #20406f;
     padding: 30px 0;
     color: #fff;
     font-size: 14px;
@@ -1070,4 +1070,20 @@ section {
     text-align: center;
     font-size: 13px;
     color: #fff;
+}
+
+.swal-button--yes {
+    background-color: #1e7e34;
+}
+
+.swal-button--no {
+    background-color: #7e4b56;
+}
+
+.swal-button:hover {
+    background-color: #767a7e !important;
+}
+
+.uraf-form-title > h2 {
+    font-family: 'El Messiri', sans-serif;
 }
