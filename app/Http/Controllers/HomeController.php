@@ -67,4 +67,16 @@ class HomeController extends Controller
 
         return redirect('/');
     }
+
+    public function followUpForm(Request $request)
+    {
+
+        return view('follow-up-form');
+    }
+
+    public function followUpFormSend(Request $request)
+    {
+
+        return redirect('/');
+    }
 }

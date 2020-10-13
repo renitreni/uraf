@@ -195,7 +195,7 @@
                             </div>
                             <div class="form-group col-md-12 mt-3">
                                 <button id="cb-btn" type="submit" class="btn btn-success btn-block" disabled>
-                                    Confirm and Submit
+                                    Submit<br><i>Ipadala</i>
                                 </button>
                             </div>
                         </form>

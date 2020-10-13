@@ -180,7 +180,7 @@
                                 window.location = "{{ route('home.uraf-form') }}";
                                 break;
                             case "followUp":
-                                swal("Sorry!", "This section is currently undergoing maintenance!", "warning");
+                                window.location = "{{ route('home.followup.form') }}";
                                 break;
                         }
                     });

@@ -68,11 +68,6 @@ h1, h2, h3, h4, h5, h6, .font-primary {
     background: #20406f;
 }
 #header > .container > .logo > a > span{
-    opacity: 0;
-}
-
-#header.header-scrolled > .container > .logo > a > span{
-    opacity: 1;
     font-family: 'El Messiri', sans-serif;
 }
 

@@ -17,3 +17,5 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form');
 Route::post('/form/send', [HomeController::class, 'urafFormSend'])->name('home.uraf-form.send');
+Route::get('/followup/form', [HomeController::class, 'followUpForm'])->name('home.followup.form');
+Route::post('/followup/send', [HomeController::class, 'followUpFormSend'])->name('home.followup.send');
