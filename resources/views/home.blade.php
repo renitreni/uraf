@@ -158,14 +158,17 @@
     <script>
         $(document).ready(function () {
             $('#uraf-btn').click(function () {
-                swal("What do you want to do?", {
+                swal("What do you want to do? (Ano ang gusto mong gawin?)", {
+                    html:true,
                     buttons: {
                         onlineForm: {
-                            text: "I would like to fill up the URAF form",
+                            text: "I would like to fill up the URAF form " +
+                                "(Gusto kong punan ang form ng URAF)",
                             value: "onlineForm",
                         },
                         followUp: {
-                            text: "I would like to follow up my request",
+                            text: 'I would like to follow up my request ' +
+                                '(Gusto kong makikipag-ugnayan sa aking tugon)',
                             value: "followUp",
                         },
                         cancel: "Cancel",

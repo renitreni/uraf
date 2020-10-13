@@ -38,9 +38,9 @@ class UrafFormRequest extends FormRequest
             "employer_contact" => 'required',
             "saudi_agency"     => 'required',
             "agency"           => 'required',
-            "image1"           => 'image',
-            "image2"           => 'image',
-            "image3"           => 'image',
+            "image1"           => 'mimes:jpg,png,mp4,mov,avi,mp3,quicktime,mpeg',
+            "image2"           => 'mimes:jpg,png,mp4,mov,avi,mp3,quicktime,mpeg',
+            "image3"           => 'mimes:jpg,png,mp4,mov,avi,mp3,quicktime,mpeg',
         ];
     }
 }

@@ -231,8 +231,8 @@
                 var map = new mapboxgl.Map({
                     container: 'map',
                     center: [position.coords.longitude, position.coords.latitude],
-                    zoom: 13,
-                    style: 'mapbox://styles/mapbox/streets-v11'
+                    zoom: 15,
+                    style: 'mapbox://styles/mapbox/satellite-streets-v10'
                 });
                 var marker = new mapboxgl.Marker()
                     .setLngLat([position.coords.longitude, position.coords.latitude])
