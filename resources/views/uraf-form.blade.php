@@ -72,16 +72,14 @@
                             <div class="col-md-12">
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="radio" name="occupation"
-                                           value="House Service Workers"
-                                           checked>
+                                           value="House Service Workers" checked>
                                     <label class="form-check-label">
                                         House Service Workers (e.g. Domestic Worker, Driver, Gardener etc.)
                                     </label>
                                 </div>
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="radio" name="occupation"
-                                           value="Highly Skilled"
-                                           checked>
+                                           value="Highly Skilled">
                                     <label class="form-check-label">
                                         Highly Skilled (e.g. Wielder, Plumber, Beautician, Office Worker, Assistant
                                         Nurse,
@@ -89,23 +87,20 @@
                                     </label>
                                 </div>
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="occupation" value="Low Skilled"
-                                           checked>
+                                    <input class="form-check-input" type="radio" name="occupation" value="Low Skilled">
                                     <label class="form-check-label">
                                         Low Skilled (e.g. Construction Worker, Laborers, Cook and Waiter etc.)
                                     </label>
                                 </div>
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="occupation" value="Nurse"
-                                           checked>
+                                    <input class="form-check-input" type="radio" name="occupation" value="Nurse">
                                     <label class="form-check-label">
                                         Nurse
                                     </label>
                                 </div>
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" type="radio" name="occupation"
-                                           value="Skilled Professional"
-                                           checked>
+                                           value="Skilled Professional">
                                     <label class="form-check-label">
                                         Skilled Professional (e.g. Engineer, Doctor, Dentist, Architects, Accountants
                                         etc.)
