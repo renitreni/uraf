@@ -19,3 +19,7 @@ Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form')
 Route::post('/form/send', [HomeController::class, 'urafFormSend'])->name('home.uraf-form.send');
 Route::get('/followup/form', [HomeController::class, 'followUpForm'])->name('home.followup.form');
 Route::post('/followup/send', [HomeController::class, 'followUpFormSend'])->name('home.followup.send');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
