@@ -3,6 +3,7 @@
 @section('content')
 
     <main id="main">
+        <div class="loading">Loading&#8230;</div>
 
         <!-- ======= Consular Section ======= -->
         <section id="services" class="services">
@@ -59,9 +60,9 @@
                                     <i>Numero ng Pasaporte</i></label>
                                 <input class="form-control" name="passport">
                             </div>
-                            <div class="form-group col-md-2">
-                                <label>IQAMA<br>
-                                    <i>Numero ng IQAMA</i></label>
+                            <div class="form-group col-md-5">
+                                <label>Saudi residence ID (IQAMA) (If Available)<br>
+                                    <i>Numero ng tirahan sa Saudi o IQAMA (Kung Meron)</i></label>
                                 <input class="form-control" name="iqama">
                             </div>
                             <div class="form-group col-md-12 mt-2">
@@ -198,6 +199,11 @@
                                     Submit<br><i>Ipadala</i>
                                 </button>
                             </div>
+                            <div class="form-group col-md-12 mt-3">
+                                <a href="{{ route('home') }}" class="btn btn-light btn-block" disabled>
+                                    Cancel my complaint<br><i>Kanselahin ang reklamo</i>
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -219,7 +225,6 @@
         $(document).ready(function () {
             mapboxgl.accessToken = 'pk.eyJ1IjoicmVuaWVyLXRyZW51ZWxhIiwiYSI6ImNrZHhya2l3aTE3OG0ycnBpOWxlYjV3czUifQ.4hVvT7_fiVshoSa9P3uAew';
 
-
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             }
@@ -227,13 +232,18 @@
             function showPosition(position) {
                 $('[name="actual_langitude"]').val(position.coords.latitude);
                 $('[name="actual_longitude"]').val(position.coords.longitude);
+
                 $('#cb-btn').removeAttr('disabled');
+
+                $('.loading').attr('hidden','hidden');
+
                 var map = new mapboxgl.Map({
                     container: 'map',
                     center: [position.coords.longitude, position.coords.latitude],
                     zoom: 15,
                     style: 'mapbox://styles/mapbox/satellite-streets-v10'
                 });
+
                 var marker = new mapboxgl.Marker()
                     .setLngLat([position.coords.longitude, position.coords.latitude])
                     .addTo(map);

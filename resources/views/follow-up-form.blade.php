@@ -47,6 +47,11 @@
                                     Submit<br><i>Ipadala</i>
                                 </button>
                             </div>
+                            <div class="form-group col-md-12 mt-3">
+                                <a href="{{ route('home') }}" class="btn btn-light btn-block" disabled>
+                                    Cancel my complaint<br><i>Kanselahin ang reklamo</i>
+                                </a>
+                            </div>
                         </form>
                     </div>
                 </div>
