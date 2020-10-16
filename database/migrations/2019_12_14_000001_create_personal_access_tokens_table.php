@@ -15,7 +15,7 @@ class CreatePersonalAccessTokensTable extends Migration
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->morphs('tokenable',20);
+            $table->morphs('tokenable');
             $table->string('name', 200);
             $table->string('token', 64)->unique();
             $table->text('abilities')->nullable();
@@ -32,5 +32,10 @@ class CreatePersonalAccessTokensTable extends Migration
     public function down()
     {
         Schema::dropIfExists('personal_access_tokens');
+    }
+
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
     }
 }
