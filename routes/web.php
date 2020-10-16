@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form');
@@ -20,6 +21,7 @@ Route::post('/form/send', [HomeController::class, 'urafFormSend'])->name('home.u
 Route::get('/followup/form', [HomeController::class, 'followUpForm'])->name('home.followup.form');
 Route::post('/followup/send', [HomeController::class, 'followUpFormSend'])->name('home.followup.send');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/dashboard/table', [DashboardController::class, 'table'])->name('dashboard.table');
+});
