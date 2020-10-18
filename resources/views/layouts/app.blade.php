@@ -20,6 +20,9 @@
     h2, .h2 {
         font-size: 2rem !important;
     }
+    h3, .h3 {
+        font-size: 1.5rem !important;
+    }
 </style>
     @livewireStyles
 </head>
@@ -42,7 +45,6 @@
 
 @stack('modals')
 
-
 <!-- Scripts -->
 <!-- JQuery -->
 <script
@@ -51,15 +53,17 @@
     crossorigin="anonymous"></script>
 
 <!-- alpine.js -->
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
-
-<!-- datatables js -->
-<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" ></script>
 
 <!-- Boostrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+
+<!-- datatables js -->
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
+
+@livewireScripts
 <script>
     $.ajaxSetup({
         headers: {
@@ -67,7 +71,7 @@
         }
     });
 </script>
-@livewireScripts
+<script src="{{ asset('js/app.js') }}"></script>
 {{ $scripts }}
 </body>
 </html>
