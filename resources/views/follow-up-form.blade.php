@@ -35,7 +35,7 @@
                             <div class="form-group col-md-4">
                                 <label>Last Name<br>
                                     <i>Apelyido</i></label>
-                                <input class="form-control" name="first_name">
+                                <input class="form-control" name="last_name">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Passport Number<br>

@@ -140,13 +140,17 @@
                             <div class="form-group col-md-4" v-if="full_details.image2">
                                 <div class="form-group">
                                     <label>Image 2</label>
-                                    <img :src="'complains-images/' + full_details.image2" class="img-fluid">
+                                    <a target="_blank" :href="'complains-images/' + full_details.image2" class="btn btn-link">
+                                        View Link
+                                    </a>
                                 </div>
                             </div>
                             <div class="form-group col-md-4" v-if="full_details.image3">
                                 <div class="form-group">
                                     <label>Image 3</label>
-                                    <img :src="'complains-images/' + full_details.image3" class="img-fluid">
+                                    <a target="_blank" :href="'complains-images/' + full_details.image3" class="btn btn-link">
+                                        View Link
+                                    </a>
                                 </div>
                             </div>
                         </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\FollowUp;
 use Illuminate\Http\Request;
 use App\Http\Requests\UrafFormRequest;
 use DB;
@@ -10,11 +11,6 @@ use Alert;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
     public function index()
     {
         return view('home');
@@ -76,7 +72,25 @@ class HomeController extends Controller
 
     public function followUpFormSend(Request $request)
     {
+        $result = DB::table('tbl_tabang')->where('first_name', $request->first_name)
+                    ->where('last_name', $request->last_name)
+                    ->where('passport', $request->passport)
+                    ->first();
 
-        return redirect('/');
+        if ($result) {
+            $model             = new FollowUp();
+            $model->tabang_id  = $result->tabang_id;
+            $model->first_name = $request->first_name;
+            $model->last_name  = $request->last_name;
+            $model->passport   = $request->passport;
+            $model->save();
+
+            return view('uraf-form-view', compact('result'));
+        } else {
+
+            Alert::warning('Complaint Not Found', 'Please fill up new form!');
+
+            return redirect(route('home.uraf-form'));
+        }
     }
 }
