@@ -3,25 +3,19 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Excel;
 use App\Exports\TabangExport;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends Controller
 {
 
     public function index()
     {
-        $to = "renier.trenuela@gmail.com";
-        $subject = "My subject";
-        $txt = "Hello world!";
-        $headers = "From: webmaster@example.com" . "\r\n" .
-            "CC: somebodyelse@example.com";
-
-        mail($to,$subject,$txt,$headers);
-
         return view('dashboard');
     }
 

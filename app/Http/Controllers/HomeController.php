@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\FollowUp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UrafFormRequest;
 use DB;
 use Alert;
@@ -58,6 +59,9 @@ class HomeController extends Controller
             "image3"           => $images[2] ?? '',
             "date_created"     => Carbon::now(),
         ]);
+
+        Mail::to(['renier.trenuela@gmail.com'])
+            ->send(new \App\Mail\NewComplaint($request));
 
         Alert::success('Success!', 'URAF has been submmited!');
 

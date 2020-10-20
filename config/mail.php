@@ -57,11 +57,6 @@ return [
             'transport' => 'postmark',
         ],
 
-        'sendmail' => [
-            'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
-        ],
-
         'log' => [
             'transport' => 'log',
             'channel' => env('MAIL_LOG_CHANNEL'),
