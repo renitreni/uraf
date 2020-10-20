@@ -24,4 +24,6 @@ Route::post('/followup/send', [HomeController::class, 'followUpFormSend'])->name
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/dashboard/table', [DashboardController::class, 'table'])->name('dashboard.table');
+    Route::get('/dashboard/export', [DashboardController::class, 'export'])->name('dashboard.export');
+    Route::get('/dashboard/track/{lat}/{lang}', [DashboardController::class, 'track'])->name('dashboard.track');
 });

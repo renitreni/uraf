@@ -10,9 +10,17 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="mb-4">Tabang Overview</h2>
-                        <table id="myTable" class="table table-hover table-bordered display nowrap"
-                               style="width:100%"></table>
+                        <h2 class="mb-4">Tabang Overview
+                            <a href="{{ route('dashboard.export') }}" class="btn btn-info">
+                                <i class="fas fa-file-excel"></i> Export
+                            </a>
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-12 mt-2">
+                                <table id="myTable" class="table table-hover table-bordered display nowrap"
+                                       style="width:100%"></table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,7 +140,8 @@
                             <div class="form-group col-md-4" v-if="full_details.image1">
                                 <div class="form-group">
                                     <label>Image 1</label>
-                                    <a target="_blank" :href="'complains-images/' + full_details.image1" class="btn btn-link">
+                                    <a target="_blank" :href="'complains-images/' + full_details.image1"
+                                       class="btn btn-link">
                                         View Link
                                     </a>
                                 </div>
@@ -140,7 +149,8 @@
                             <div class="form-group col-md-4" v-if="full_details.image2">
                                 <div class="form-group">
                                     <label>Image 2</label>
-                                    <a target="_blank" :href="'complains-images/' + full_details.image2" class="btn btn-link">
+                                    <a target="_blank" :href="'complains-images/' + full_details.image2"
+                                       class="btn btn-link">
                                         View Link
                                     </a>
                                 </div>
@@ -148,7 +158,8 @@
                             <div class="form-group col-md-4" v-if="full_details.image3">
                                 <div class="form-group">
                                     <label>Image 3</label>
-                                    <a target="_blank" :href="'complains-images/' + full_details.image3" class="btn btn-link">
+                                    <a target="_blank" :href="'complains-images/' + full_details.image3"
+                                       class="btn btn-link">
                                         View Link
                                     </a>
                                 </div>
@@ -162,44 +173,71 @@
                 </div>
             </div>
         </div>
-    </div>
 
+        <div id="mdl-location" class="modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Track Location</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id='map' style='width: 100%; height: 60vh;'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <x-slot name="scripts">
         <script>
             new Vue({
                 el: '#app',
                 data() {
-                  return {
-                      dt: null,
-                      full_details: {
-                          actual_langitude: "",
-                          actual_longitude: "",
-                          agency: "",
-                          complain: "",
-                          contact_number: "",
-                          contact_number2: "",
-                          date_created: "",
-                          email_address: "",
-                          employer_contact: "",
-                          employer_name: "",
-                          first_name: "",
-                          gender: "",
-                          image1: "",
-                          image2: "",
-                          image3: "",
-                          iqama: "",
-                          last_name: "",
-                          location_ksa: "",
-                          middle_name: "",
-                          occupation: "",
-                          passport: "",
-                          saudi_agency: "",
-                          tabang_id: "",
-                      }
-                  }
+                    return {
+                        dt: null,
+                        map: null,
+                        marker: null,
+                        full_details: {
+                            actual_langitude: "",
+                            actual_longitude: "",
+                            agency: "",
+                            complain: "",
+                            contact_number: "",
+                            contact_number2: "",
+                            date_created: "",
+                            email_address: "",
+                            employer_contact: "",
+                            employer_name: "",
+                            first_name: "",
+                            gender: "",
+                            image1: "",
+                            image2: "",
+                            image3: "",
+                            iqama: "",
+                            last_name: "",
+                            location_ksa: "",
+                            middle_name: "",
+                            occupation: "",
+                            passport: "",
+                            saudi_agency: "",
+                            tabang_id: "",
+                        }
+                    }
+                },
+                methods: {
                 },
                 mounted() {
-                    var $this =this;
+                    var $this = this;
+
                     $this.dt = $('#myTable').DataTable({
                         serverSide: true,
                         "scrollX": true,
@@ -211,7 +249,13 @@
                         columns: [
                             {
                                 data: function (value) {
-                                    return '<a class="btn btn-primary btn-sm btn-show-more">Full Details</a>';
+                                    return '\n' +
+                                        '<div class="btn-group btn-group-sm btn-block" role="group" aria-label="Basic example">\n' +
+                                        '<a class="btn btn-primary btn-show-more"><i class="fas fa-eye"></i></a>\n' +
+                                        '<a href="/dashboard/track/' + value.actual_langitude + '/' + value.actual_longitude + '" ' +
+                                        'target="_blank"' +
+                                        'class="btn btn-warning btn-show-loc"><i class="fas fa-location-arrow"></i></a>\n' +
+                                        '</div>';
                                 }, name: 'tabang_id', title: 'Action', width: '11%'
                             },
                             {data: 'tabang_id', name: 'tabang_id', title: 'ID'},
@@ -225,7 +269,7 @@
                         ],
                         drawCallback() {
                             $('.btn-show-more').click(function () {
-                                $this.full_details = $this.dt.row( $(this).parents('tr') ).data();
+                                $this.full_details = $this.dt.row($(this).parents('tr')).data();
                                 $('#mdl-overview').modal('show');
                             });
                         }

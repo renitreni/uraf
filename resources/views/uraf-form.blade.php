@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-
     <main id="main">
         <div class="loading">Loading&#8230;</div>
 
