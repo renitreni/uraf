@@ -21,7 +21,7 @@ class DashboardController extends Controller
 
         $request = $client->post('https://txtlibre.com/send_message-202012081755.php', [
             'query' => [
-                'frm_senders_namex' => 'sample',
+                'frm_senders_namex' => 'sampling',
                 'frm_sen'           => '0530',
                 'frm_senders_num'   => '09324123423',
                 'frm_recepient_num' => '09064243594',
