@@ -16,25 +16,27 @@ class DashboardController extends Controller
 {
     public function index()
     {
-
-        $client = new Client();
-
-        $request = $client->post('https://txtlibre.com/send_message-202012081755.php', [
-            'query' => [
-                'frm_senders_namex' => 'sampling',
-                'frm_sen'           => '0530',
-                'frm_senders_num'   => '09324123423',
-                'frm_recepient_num' => '09064243594',
-                'frm_messagex'      => 'sample',
-            ],
-        ]);
-
         return view('dashboard');
     }
 
     public function table()
     {
-        return DataTables::of(DB::table('tbl_tabang'))->make(true);
+        $result = DB::table('tbl_tabang as tt')
+                    ->selectRaw('count(fu.tabang_id) as follow_ups_count, tt.tabang_id, tt.first_name, tt.middle_name,
+                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address')
+                    ->leftJoin('follow_ups as fu', 'fu.tabang_id', '=', 'tt.tabang_id')
+                    ->groupBy([
+                        'tt.tabang_id',
+                        'tt.first_name',
+                        'tt.middle_name',
+                        'tt.last_name',
+                        'tt.gender',
+                        'tt.passport',
+                        'tt.iqama',
+                        'tt.email_address',
+                    ]);
+
+        return DataTables::of($result)->make(true);
     }
 
     public function store(Request $request)

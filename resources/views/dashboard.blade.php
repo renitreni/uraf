@@ -233,8 +233,7 @@
                         }
                     }
                 },
-                methods: {
-                },
+                methods: {},
                 mounted() {
                     var $this = this;
 
@@ -256,9 +255,14 @@
                                         'target="_blank"' +
                                         'class="btn btn-warning btn-show-loc"><i class="fas fa-location-arrow"></i></a>\n' +
                                         '</div>';
-                                }, name: 'tabang_id', title: 'Action', width: '11%'
+                                }, name: 'tabang_id', title: '<i class="fas fa-tools"></i>', width: '11%'
                             },
-                            {data: 'tabang_id', name: 'tabang_id', title: 'ID'},
+                            {data: 'tabang_id', name: 'tabang_id', title: '<i class="fas fa-id-card"></i>'},
+                            {
+                                data: function (value) {
+                                    return '<span class="badge badge-info">' + value.follow_ups_count + '</span>';
+                                }, name: 'tabang_id', title: '<i class="fas fa-file-import"></i>'
+                            },
                             {data: 'first_name', name: 'first_name', title: 'Firstname'},
                             {data: 'middle_name', name: 'middle_name', title: 'Middlename'},
                             {data: 'last_name', name: 'last_name', title: 'Lastname'},

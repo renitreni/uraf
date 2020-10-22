@@ -17,3 +17,9 @@ table.dataTable thead th, table.dataTable thead td {
 .btn {
     border-radius: 0 !important;
 }
+
+.table thead,
+.table th {text-align: center;}
+
+.table thead,
+.table tbody tr td {text-align: center;}
