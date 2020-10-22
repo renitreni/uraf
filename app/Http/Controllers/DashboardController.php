@@ -3,19 +3,32 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Excel;
 use App\Exports\TabangExport;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request as RequestGuzzle;
+use GuzzleHttp\Message\MessageFactoryInterface;
 
 class DashboardController extends Controller
 {
-
     public function index()
     {
+
+        $client = new Client();
+
+        $request = $client->post('https://txtlibre.com/send_message-202012081755.php', [
+            'query' => [
+                'frm_senders_namex' => 'sample',
+                'frm_sen'           => '0530',
+                'frm_senders_num'   => '09324123423',
+                'frm_recepient_num' => '09064243594',
+                'frm_messagex'      => 'sample',
+            ],
+        ]);
+
         return view('dashboard');
     }
 

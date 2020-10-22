@@ -30,7 +30,7 @@ class NewComplaint extends Mailable
      */
     public function build()
     {
-        return $this->from('do-not-reply@uraf-sys.com')
+        return $this->from('do-not-reply@uraf-ksa.com')
                     ->html(
                         'New Request has been send today! <br>' .
                         $this->request->first_name . '<br>' .

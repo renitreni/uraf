@@ -60,7 +60,7 @@ class HomeController extends Controller
             "date_created"     => Carbon::now(),
         ]);
 
-        Mail::to(['renier.trenuela@gmail.com'])
+        Mail::to(['renier.trenuela@gmail.com', 'Sab_princes@yahoo.com'])
             ->send(new \App\Mail\NewComplaint($request));
 
         Alert::success('Success!', 'URAF has been submmited!');
