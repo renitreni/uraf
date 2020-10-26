@@ -8,8 +8,6 @@ use Excel;
 use App\Exports\TabangExport;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\DB;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request as RequestGuzzle;
 use GuzzleHttp\Message\MessageFactoryInterface;
 
 class DashboardController extends Controller
@@ -23,7 +21,7 @@ class DashboardController extends Controller
     {
         $result = DB::table('tbl_tabang as tt')
                     ->selectRaw('count(fu.tabang_id) as follow_ups_count, tt.tabang_id, tt.first_name, tt.middle_name,
-                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address')
+                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address, tt.actual_langitude, tt.actual_longitude')
                     ->leftJoin('follow_ups as fu', 'fu.tabang_id', '=', 'tt.tabang_id')
                     ->groupBy([
                         'tt.tabang_id',
@@ -34,6 +32,8 @@ class DashboardController extends Controller
                         'tt.passport',
                         'tt.iqama',
                         'tt.email_address',
+                        'tt.actual_langitude',
+                        'tt.actual_longitude'
                     ]);
 
         return DataTables::of($result)->make(true);

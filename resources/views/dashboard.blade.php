@@ -10,13 +10,13 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="mb-4">Tabang Overview
-                            <a href="{{ route('dashboard.export') }}" class="btn btn-info">
-                                <i class="fas fa-file-excel"></i> Export
-                            </a>
-                        </h2>
                         <div class="row">
-                            <div class="col-md-12 mt-2">
+                            <div class="col-md-12 mt-1">
+                                <a href="{{ route('dashboard.export') }}" class="btn btn-info">
+                                    <i class="fas fa-file-excel"></i> Export
+                                </a>
+                            </div>
+                            <div class="col-md-12 mt-3">
                                 <table id="myTable" class="table table-hover table-bordered display nowrap"
                                        style="width:100%"></table>
                             </div>
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div id="mdl-overview" class="modal" tabindex="-1">
+        <div id="mdl-overview" class="modal fade" tabindex="-1">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -173,29 +173,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="mdl-location" class="modal">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Track Location</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div id='map' style='width: 100%; height: 60vh;'></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <x-slot name="scripts">
         <script>
@@ -248,12 +225,15 @@
                         columns: [
                             {
                                 data: function (value) {
-                                    return '\n' +
-                                        '<div class="btn-group btn-group-sm btn-block" role="group" aria-label="Basic example">\n' +
-                                        '<a class="btn btn-primary btn-show-more"><i class="fas fa-eye"></i></a>\n' +
+                                    return '<div class="btn-group btn-group-sm btn-block">' +
+                                        '<a class="btn btn-primary btn-show-more">' +
+                                        '<i class="fas fa-eye"></i>' +
+                                        '</a>' +
                                         '<a href="/dashboard/track/' + value.actual_langitude + '/' + value.actual_longitude + '" ' +
-                                        'target="_blank"' +
-                                        'class="btn btn-warning btn-show-loc"><i class="fas fa-location-arrow"></i></a>\n' +
+                                        'target="_blank" ' +
+                                        'class="btn btn-warning btn-show-loc"> ' +
+                                        '<i class="fas fa-location-arrow"></i>' +
+                                        '</a>' +
                                         '</div>';
                                 }, name: 'tabang_id', title: '<i class="fas fa-tools"></i>', width: '11%'
                             },

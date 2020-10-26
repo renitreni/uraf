@@ -64,6 +64,9 @@
 <!-- datatables js -->
 <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
 @livewireScripts
 <script>
     $.ajaxSetup({

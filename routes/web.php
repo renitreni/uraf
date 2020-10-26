@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use \App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form');
@@ -26,4 +27,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('/dashboard/table', [DashboardController::class, 'table'])->name('dashboard.table');
     Route::get('/dashboard/export', [DashboardController::class, 'export'])->name('dashboard.export');
     Route::get('/dashboard/track/{lat}/{lang}', [DashboardController::class, 'track'])->name('dashboard.track');
+
+    Route::get('/users', [UserController::class, 'index'])->name('users');
+    Route::post('/users/table', [UserController::class, 'table'])->name('users.table');
+    Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+    Route::post('/users/delete', [UserController::class, 'destroy'])->name('users.delete');
 });
