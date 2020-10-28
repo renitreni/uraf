@@ -4,7 +4,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h1>Philippine Embassy Riyadh (URAF)</h1>
+            <h1>Philippine Embassy Of Riyadh (URAF)</h1>
             <h2>Welcome To Our Official Website</h2>
             <a href="#" id="uraf-btn" class="btn-get-started">
                 Unified Request For Assistance Form

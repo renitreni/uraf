@@ -36,7 +36,7 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <a href="{{ route('home') }}">
                 <img src="{{ asset('img/embassy-logo.png') }}" alt="" class="img-fluid">
-                <span class="text-light">Philippine Embassy Riyadh (URAF)</span>
+                <span class="text-light">Philippine Embassy Of Riyadh (URAF)</span>
             </a>
         </div>
     </div>
