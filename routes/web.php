@@ -12,9 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
-use \App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController;
+use Laravel\Fortify\Fortify;
+
+
+Fortify::loginView(function () {
+    return redirect()->route('home');
+});
+
+Route::get('/permission', function () {
+    return view('auth.login');
+})->name('permission');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/form', [HomeController::class, 'urafForm'])->name('home.uraf-form');
