@@ -72,5 +72,7 @@
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 @yield('scripts')
 </body>
-
+<!-- Company Managed By: Yaramay Services -->
+<!-- Website Author: Renier R. Trenuela II -->
+<!-- Year Started: 2020 -->
 </html>
