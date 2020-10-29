@@ -107,11 +107,11 @@
                             </div>
                             <div class="form-group col-md-auto">
                                 <strong>Recruitment Agency in Saudi</strong>
-                                <i>@{{ full_details.saudi_agency }}</i>
+                                <i v-html="full_details.saudi_agency"></i>
                             </div>
                             <div class="form-group col-md-auto">
                                 <strong>Recruitment Agency in Philippines</strong>
-                                <i>@{{ full_details.agency }}</i>
+                                <i v-html="full_details.agency"></i>
                             </div>
                             <div class="form-group col-md-12 mt-2">
                                 <h3>Complaint</h3>
@@ -234,6 +234,11 @@
                                         'class="btn btn-warning btn-show-loc"> ' +
                                         '<i class="fas fa-location-arrow"></i>' +
                                         '</a>' +
+                                        @if(auth()->user()->name == 'Administrator')
+                                        '<a class="btn btn-danger btn-delete-info">' +
+                                        '<i class="fas fa-trash"></i>' +
+                                        '</a>' +
+                                        @endif
                                         '</div>';
                                 }, name: 'tabang_id', title: '<i class="fas fa-tools"></i>', width: '11%'
                             },
@@ -255,6 +260,20 @@
                             $('.btn-show-more').click(function () {
                                 $this.full_details = $this.dt.row($(this).parents('tr')).data();
                                 $('#mdl-overview').modal('show');
+                            });
+
+                            $('.btn-delete-info').click(function () {
+                                $this.full_details = $this.dt.row($(this).parents('tr')).data();
+                                Swal.fire({
+                                    title: 'Do you want to delete this?',
+                                    showCancelButton: true,
+                                    confirmButtonText: `Delete`,
+                                }).then((result) => {
+                                    /* Read more about isConfirmed, isDenied below */
+                                    if (result.isConfirmed) {
+                                        Swal.fire('Saved!', '', 'success')
+                                    }
+                                })
                             });
                         }
                     });
