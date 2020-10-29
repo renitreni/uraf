@@ -20,25 +20,8 @@ class DashboardController extends Controller
     public function table()
     {
         $result = DB::table('tbl_tabang as tt')
-                    ->selectRaw('count(fu.tabang_id) as follow_ups_count, tt.tabang_id, tt.first_name, tt.middle_name,
-                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address, tt.actual_langitude, tt.actual_longitude,
-                    tt.image1, tt.image2, tt.image3')
-                    ->leftJoin('follow_ups as fu', 'fu.tabang_id', '=', 'tt.tabang_id')
-                    ->groupBy([
-                        'tt.tabang_id',
-                        'tt.first_name',
-                        'tt.middle_name',
-                        'tt.last_name',
-                        'tt.gender',
-                        'tt.passport',
-                        'tt.iqama',
-                        'tt.email_address',
-                        'tt.actual_langitude',
-                        'tt.actual_longitude',
-                        'tt.image1',
-                        'tt.image2',
-                        'tt.image3',
-                    ]);
+                    ->selectRaw('(select count(*) from follow_ups where tabang_id = tt.tabang_id) as follow_ups_count,
+                    tt.*');
 
         return DataTables::of($result)->make(true);
     }
