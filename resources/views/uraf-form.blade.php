@@ -13,7 +13,7 @@
                 </div>
                 <div class="row justify-content-center">
                     @if ($errors->any())
-                        <div class="col-md-12">
+                        <div class="col-md-auto">
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
@@ -23,6 +23,26 @@
                             </div>
                         </div>
                     @endif
+                    <div class="col-md-auto">
+                        <div class="alert alert-secondary" role="alert">
+                            <style type="text/css">
+                                p.p1 {
+                                    margin: 0.0px 0.0px 0.0px 0.0px;
+                                }
+
+                                p.p2 {
+                                    margin: 0.0px 0.0px 0.0px 0.0px;
+                                }
+                            </style>
+                            <p class="p1">&quot;As much as possible please provide all information requested. The Embassy confirms that all</p>
+                            <p class="p1">information given is for the use of the Embassy only and not to be disseminated or distributed</p>
+                            <p class="p1">to private individuals or corporation.&quot;</p>
+                            <p class="p2"><br></p>
+                            <p class="p1">&quot;Hangga&apos;t maari ibigay ng impormasyong hinihingi. Sinisigurado ng Embahada na lahat ng</p>
+                            <p class="p1">impormasyong ibibigay ay para lamang sa paggamit ng Embahada at hindi ipamimigay o ipapamahagi</p>
+                            <p class="p1">sa mga pribadong indibidwal o korporasyon.&quot;</p>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <form class="row" method="POST" action="{{ route('home.uraf-form.send') }}"
                               enctype="multipart/form-data">
@@ -225,7 +245,7 @@
             }
 
             $('#cb-btn').on('click', function () {
-                $('.loading').removeAttr('hidden','hidden');
+                $('.loading').removeAttr('hidden', 'hidden');
             });
 
             function showPosition(position) {
@@ -234,7 +254,7 @@
 
                 $('#cb-btn').removeAttr('disabled');
 
-                $('.loading').attr('hidden','hidden');
+                $('.loading').attr('hidden', 'hidden');
 
                 var map = new mapboxgl.Map({
                     container: 'map',
@@ -249,7 +269,7 @@
             }
 
             function showError(error) {
-                switch(error.code) {
+                switch (error.code) {
                     case error.PERMISSION_DENIED:
                         swal.fire({
                             title: 'GPS Required (GPS ay kailangan)',
