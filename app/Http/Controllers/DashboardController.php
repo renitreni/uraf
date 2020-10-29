@@ -21,7 +21,8 @@ class DashboardController extends Controller
     {
         $result = DB::table('tbl_tabang as tt')
                     ->selectRaw('count(fu.tabang_id) as follow_ups_count, tt.tabang_id, tt.first_name, tt.middle_name,
-                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address, tt.actual_langitude, tt.actual_longitude')
+                    tt.last_name, tt.gender, tt.passport, tt.iqama, tt.email_address, tt.actual_langitude, tt.actual_longitude,
+                    tt.image1, tt.image2, tt.image3')
                     ->leftJoin('follow_ups as fu', 'fu.tabang_id', '=', 'tt.tabang_id')
                     ->groupBy([
                         'tt.tabang_id',

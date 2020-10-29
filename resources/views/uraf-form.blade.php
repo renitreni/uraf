@@ -220,7 +220,7 @@
             mapboxgl.accessToken = 'pk.eyJ1IjoicmVuaWVyLXRyZW51ZWxhIiwiYSI6ImNrZHhya2l3aTE3OG0ycnBpOWxlYjV3czUifQ.4hVvT7_fiVshoSa9P3uAew';
 
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
             }
             $('#cb-btn').on('click', function () {
                 $('.loading').removeAttr('hidden','hidden');
@@ -244,6 +244,23 @@
                 var marker = new mapboxgl.Marker()
                     .setLngLat([position.coords.longitude, position.coords.latitude])
                     .addTo(map);
+            }
+
+            function showError(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert('denied');
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        x.innerHTML = "Location information is unavailable."
+                        break;
+                    case error.TIMEOUT:
+                        x.innerHTML = "The request to get user location timed out."
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        x.innerHTML = "An unknown error occurred."
+                        break;
+                }
             }
         });
     </script>
