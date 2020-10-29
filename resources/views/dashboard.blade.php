@@ -106,7 +106,7 @@
                                 <i>@{{ full_details.employer_contact }}</i>
                             </div>
                             <div class="form-group col-md-auto">
-                                <label>Recruitment Agency in Saudi</label>
+                                <strong>Recruitment Agency in Saudi</strong>
                                 <i>@{{ full_details.saudi_agency }}</i>
                             </div>
                             <div class="form-group col-md-auto">
