@@ -126,7 +126,7 @@
                         drawCallback() {
                             $('.btn-del-user').click(function () {
                                 $this.full_details = $this.dt.row($(this).parents('tr')).data();
-                                swal({
+                                swal.fire({
                                     title: "Are you sure?",
                                     text: "Once deleted, you will not be able to recover this data!",
                                     icon: "warning",
