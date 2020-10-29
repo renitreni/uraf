@@ -215,6 +215,7 @@
 @section('scripts')
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         $(document).ready(function () {
             mapboxgl.accessToken = 'pk.eyJ1IjoicmVuaWVyLXRyZW51ZWxhIiwiYSI6ImNrZHhya2l3aTE3OG0ycnBpOWxlYjV3czUifQ.4hVvT7_fiVshoSa9P3uAew';
@@ -222,6 +223,7 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
             }
+
             $('#cb-btn').on('click', function () {
                 $('.loading').removeAttr('hidden','hidden');
             });
@@ -249,16 +251,31 @@
             function showError(error) {
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
-                        alert('denied');
+                        swal.fire({
+                            title: 'GPS Required (GPS ay kailangan)',
+                            icon: 'info',
+                            html:
+                                'Please enable the GPS locator to continue<br>' +
+                                '<i>Maari lamang buksan ang GPS upang magpatuloy</i>',
+                            focusConfirm: false,
+                            confirmButtonText:
+                                'GPS has been enabled!<br><i>Bukas na ang GPS!</i>',
+                            confirmButtonAriaLabel: 'Thumbs up, great!',
+                        }).then((result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            if (result.isConfirmed) {
+                                window.location = "{{ route('home.uraf-form') }}"
+                            }
+                        });
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        x.innerHTML = "Location information is unavailable."
+                        alert("Location information is unavailable.");
                         break;
                     case error.TIMEOUT:
-                        x.innerHTML = "The request to get user location timed out."
+                        alert("The request to get user location timed out.");
                         break;
                     case error.UNKNOWN_ERROR:
-                        x.innerHTML = "An unknown error occurred."
+                        alert("An unknown error occurred.");
                         break;
                 }
             }
