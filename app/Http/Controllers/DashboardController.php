@@ -34,7 +34,10 @@ class DashboardController extends Controller
                         'tt.iqama',
                         'tt.email_address',
                         'tt.actual_langitude',
-                        'tt.actual_longitude'
+                        'tt.actual_longitude',
+                        'tt.image1',
+                        'tt.image2',
+                        'tt.image3',
                     ]);
 
         return DataTables::of($result)->make(true);
