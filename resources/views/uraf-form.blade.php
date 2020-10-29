@@ -222,6 +222,9 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             }
+            $('#cb-btn').on('click', function () {
+                $('.loading').removeAttr('hidden','hidden');
+            });
 
             function showPosition(position) {
                 $('[name="actual_langitude"]').val(position.coords.latitude);
