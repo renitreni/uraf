@@ -126,30 +126,26 @@
                         drawCallback() {
                             $('.btn-del-user').click(function () {
                                 $this.full_details = $this.dt.row($(this).parents('tr')).data();
-                                swal.fire({
-                                    title: "Are you sure?",
-                                    text: "Once deleted, you will not be able to recover this data!",
-                                    icon: "warning",
-                                    buttons: true,
-                                    dangerMode: true,
-                                })
-                                    .then((willDelete) => {
-                                        if (willDelete) {
-                                            $.ajax({
-                                               url: '{{ route('users.delete') }}',
-                                                method: 'POST',
-                                                data: $this.full_details,
-                                                success(value) {
-                                                    swal("Poof! Your imaginary file has been deleted!", {
-                                                        icon: "success",
-                                                    });
-                                                    $this.dt.draw()
-                                                }
-                                            });
-                                        } else {
-                                            swal("Your data is safe!");
-                                        }
-                                    });
+                                Swal.fire({
+                                    title: 'Do you want to delete this?',
+                                    showCancelButton: true,
+                                    confirmButtonText: `Delete`,
+                                }).then((result) => {
+                                    /* Read more about isConfirmed, isDenied below */
+                                    if (result.isConfirmed) {
+                                        $.ajax({
+                                            url: '{{ route('users.delete') }}',
+                                            method: 'POST',
+                                            data: $this.full_details,
+                                            success(value) {
+                                                swal("Poof! Your imaginary file has been deleted!", {
+                                                    icon: "success",
+                                                });
+                                                $this.dt.draw()
+                                            }
+                                        });
+                                    }
+                                });
                             });
                         }
                     });
