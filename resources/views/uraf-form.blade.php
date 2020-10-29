@@ -34,10 +34,11 @@
                                     margin: 0.0px 0.0px 0.0px 0.0px;
                                 }
                             </style>
+                            <h5 class="alert-heading">Notice (<i>Paunawa</i>):</h5>
                             <p class="p1">&quot;As much as possible please provide all information requested. The Embassy confirms that all</p>
                             <p class="p1">information given is for the use of the Embassy only and not to be disseminated or distributed</p>
                             <p class="p1">to private individuals or corporation.&quot;</p>
-                            <p class="p2"><br></p>
+                            <hr>
                             <p class="p1">&quot;Hangga&apos;t maari ibigay ng impormasyong hinihingi. Sinisigurado ng Embahada na lahat ng</p>
                             <p class="p1">impormasyong ibibigay ay para lamang sa paggamit ng Embahada at hindi ipamimigay o ipapamahagi</p>
                             <p class="p1">sa mga pribadong indibidwal o korporasyon.&quot;</p>
