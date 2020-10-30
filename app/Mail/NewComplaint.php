@@ -32,11 +32,11 @@ class NewComplaint extends Mailable
     {
         return $this->from('do-not-reply@uraf-ksa.com')
                     ->html(
-                        'New Request has been send today! <br>' .
-                        $this->request->first_name . '<br>' .
-                        $this->request->middle_name . '<br>' .
-                        $this->request->last_name . '<br>' .
-                        $this->request->complain
+                        'New Request has been sent today! <br>' .
+                        'Fullname: ' . $this->request->last_name . ', '
+                        . $this->request->first_name . ' '
+                        . $this->request->middle_name . '<br>' .
+                        'Complaint:<br>' . $this->request->complain
                     );
     }
 }
