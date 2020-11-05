@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::post('/dashboard/table', [DashboardController::class, 'table'])->name('dashboard.table');
     Route::get('/dashboard/export', [DashboardController::class, 'export'])->name('dashboard.export');
     Route::get('/dashboard/track/{lat}/{lang}', [DashboardController::class, 'track'])->name('dashboard.track');
+    Route::post('/dashboard/delete', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
 
     Route::get('/users', [UserController::class, 'index'])->name('users');
     Route::post('/users/table', [UserController::class, 'table'])->name('users.table');

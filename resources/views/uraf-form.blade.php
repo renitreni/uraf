@@ -53,22 +53,26 @@
                                 <hr>
                             </div>
                             <div class="form-group col-md-4">
-                                <label>First Name<br>
+                                <label><span style="color:red;">*</span>
+                                    First Name<br>
                                     <i>Pangalan</i></label>
-                                <input class="form-control" name="first_name">
+                                <input class="form-control" name="first_name" required>
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Middle Name<br>
+                                <label><span style="color:red;">*</span>
+                                    Middle Name<br>
                                     <i>Panggitnang Apelyido</i></label>
                                 <input class="form-control" name="middle_name">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Last Name<br>
+                                <label><span style="color:red;">*</span>
+                                    Last Name<br>
                                     <i>Apelyido</i></label>
                                 <input class="form-control" name="last_name">
                             </div>
                             <div class="form-group col-md-2">
-                                <label>Gender<br>
+                                <label><span style="color:red;">*</span>
+                                    Gender<br>
                                     <i>Kasarian</i></label>
                                 <select name="gender" class="form-control">
                                     <option value="Male">Male</option>
@@ -147,7 +151,9 @@
                                 <input class="form-control" name="contact_number2">
                             </div>
                             <div class="form-group col-md-4">
-                                <label>Location KSA<br><i>Lokasyon sa Saudi</i></label>
+                                <label><span style="color:red;">*</span>
+                                    Location KSA<br><i>Lokasyon sa Saudi</i>
+                                </label>
                                 <input class="form-control" name="location_ksa">
                             </div>
                             <div class="form-group col-md-12 mt-2">
@@ -176,12 +182,16 @@
                                 <input class="form-control" name="agency">
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <h2>Complaint <i>Reklamo</i></h2>
+                                <h2>
+                                    Complaint <i>Reklamo</i>
+                                </h2>
                                 <hr>
                             </div>
                             <div class="form-group col-md-12 mt-2">
-                                <label>Please provide us your concerns below. (Please allow "Know your location" in the
-                                    browser)</label>
+                                <label><span style="color:red;">*</span>
+                                    Please provide us your concerns below.<br>
+                                    <i>Ilagda ang iyong rekalmo sa ibaba.</i>
+                                </label>
                                 <textarea class="form-control" name="complain" rows="6"
                                           style="resize: none;"></textarea>
                             </div>
