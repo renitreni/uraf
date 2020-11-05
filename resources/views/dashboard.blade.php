@@ -269,9 +269,16 @@
                                     showCancelButton: true,
                                     confirmButtonText: `Delete`,
                                 }).then((result) => {
-                                    /* Read more about isConfirmed, isDenied below */
                                     if (result.isConfirmed) {
-                                        Swal.fire('Saved!', '', 'success')
+                                        $.ajax({
+                                            url: '{{ route('dashboard.destroy') }}',
+                                            method: 'POST',
+                                            data: $this.full_details,
+                                            success(value) {
+                                                Swal.fire('Deleted!', '', 'success')
+                                                $this.dt.draw()
+                                            }
+                                        });
                                     }
                                 })
                             });

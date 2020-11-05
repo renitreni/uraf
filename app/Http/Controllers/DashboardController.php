@@ -46,9 +46,9 @@ class DashboardController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        DB::table('tbl_tabang')->where('tabang_id', $request->tabang_id)->delete();
     }
 
     public function export()
