@@ -31,7 +31,6 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
     <div class="container">
-
         <div class="logo float-left">
             <!-- Uncomment below if you prefer to use an image logo -->
             <a href="{{ route('home') }}">
@@ -39,6 +38,12 @@
                 <span class="text-light">Philippine Embassy Of Riyadh (URAF)</span>
             </a>
         </div>
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li><a href="{{ route('home.uraf-form') }}">URAF Form</a></li>
+                <li><a href="{{ route('home.followup.form') }}">Follow-Up Form</a></li>
+            </ul>
+        </nav>
     </div>
 </header><!-- End #header -->
 
