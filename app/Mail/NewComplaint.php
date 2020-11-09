@@ -31,12 +31,9 @@ class NewComplaint extends Mailable
     public function build()
     {
         return $this->from('do-not-reply@uraf-ksa.com')
-                    ->html(
-                        'New Request has been sent today! <br>' .
-                        'Fullname: ' . $this->request->last_name . ', '
-                        . $this->request->first_name . ' '
-                        . $this->request->middle_name . '<br>' .
-                        'Complaint:<br>' . $this->request->complain
-                    );
+                    ->view('email.complain')
+                    ->with([
+                        'full_details' => $this->request->input(),
+                    ]);
     }
 }
