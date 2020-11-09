@@ -28,8 +28,8 @@
     </div>
     <div class="form-group col-md-auto"><strong>Employer Name</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<em>{{ $full_details['employer_name'] }}</em></div>
     <div class="form-group col-md-auto"><strong>Employer Contact Number</strong>&nbsp;&nbsp;<em>{{ $full_details['employer_contact'] }}</em></div>
-    <div class="form-group col-md-auto"><strong>Recruitment Agency in Saudi</strong> </div>
-    <div class="form-group col-md-auto"><strong>Recruitment Agency in Philippines</strong> </div>
+    <div class="form-group col-md-auto"><strong>Recruitment Agency in Saudi</strong> &nbsp;&nbsp;<em>{{ $full_details['saudi_agency'] }}</em></div>
+    <div class="form-group col-md-auto"><strong>Recruitment Agency in Philippines</strong> &nbsp;&nbsp;<em>{{ $full_details['agency'] }}</em></div>
     <div class="form-group col-md-12 mt-2">
         <h3>Complaint</h3>
         <hr>
