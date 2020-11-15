@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-//        return view('home');
+        //        return view('home');
         return view('uraf-form');
     }
 
@@ -77,7 +77,8 @@ class HomeController extends Controller
 
     public function followUpFormSend(Request $request)
     {
-        $result = DB::table('tbl_tabang')->where('first_name', $request->first_name)
+        $result = DB::table('tbl_tabang')
+                    ->where('first_name', $request->first_name)
                     ->where('last_name', $request->last_name)
                     ->where('passport', $request->passport)
                     ->first();

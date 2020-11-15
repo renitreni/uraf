@@ -59,7 +59,7 @@
                                 <input class="form-control" name="first_name" required>
                             </div>
                             <div class="form-group col-md-4">
-                                <label><span style="color:red;">*</span>
+                                <label>
                                     Middle Name<br>
                                     <i>Panggitnang Apelyido</i></label>
                                 <input class="form-control" name="middle_name">
