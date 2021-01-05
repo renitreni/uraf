@@ -234,11 +234,11 @@
                                         'class="btn btn-warning btn-show-loc"> ' +
                                         '<i class="fas fa-location-arrow"></i>' +
                                         '</a>' +
-                                        @if(auth()->user()->name == 'Administrator')
+{{--                                        @if(auth()->user()->name == 'Administrator')--}}
                                         '<a class="btn btn-danger btn-delete-info">' +
                                         '<i class="fas fa-trash"></i>' +
                                         '</a>' +
-                                        @endif
+{{--                                        @endif--}}
                                         '</div>';
                                 }, name: 'tabang_id', title: '<i class="fas fa-tools"></i>', width: '11%'
                             },
