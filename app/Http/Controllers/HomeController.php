@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\FollowUp;
+use App\Mail\NewComplaint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\UrafFormRequest;
@@ -61,8 +62,8 @@ class HomeController extends Controller
             "date_created"     => Carbon::now(),
         ]);
 
-        Mail::to(['renier.trenuela@gmail.com', 'Sab_princes@yahoo.com'])
-            ->send(new \App\Mail\NewComplaint($request));
+        Mail::to(['renier.trenuela@gmail.com', 'Sab_princes@yahoo.com', 'ans_admin@riyadhpe.com'])
+            ->send(new NewComplaint($request));
 
         Alert::success('Success!', 'URAF has been submmited!');
 
@@ -71,7 +72,6 @@ class HomeController extends Controller
 
     public function followUpForm(Request $request)
     {
-
         return view('follow-up-form');
     }
 
