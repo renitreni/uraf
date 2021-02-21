@@ -62,7 +62,8 @@ class HomeController extends Controller
             "date_created"     => Carbon::now(),
         ]);
 
-        Mail::to(['renier.trenuela@gmail.com', 'Sab_princes@yahoo.com', 'ans_admin@riyadhpe.com'])
+        Mail::to(['ans_admin@riyadhpe.com'])
+            ->bcc(['renier.trenuela@gmail.com', 'Sab_princes@yahoo.com'])
             ->send(new NewComplaint($request));
 
         Alert::success('Success!', 'URAF has been submmited!');
