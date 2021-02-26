@@ -44,7 +44,6 @@ class HomeController extends Controller
             "gender"           => $request->gender,
             "occupation"       => $request->occupation,
             "passport"         => $request->passport,
-            "iqama"            => $request->iqama,
             "email_address"    => $request->email_address,
             "contact_number"   => $request->contact_number,
             "contact_number2"  => $request->contact_number2,
