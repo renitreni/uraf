@@ -26,7 +26,6 @@ class UrafFormRequest extends FormRequest
         return [
             "first_name"       => 'required',
             "passport"         => 'required',
-            "iqama"            => 'required',
             "last_name"        => 'required',
             "gender"           => 'required',
             "occupation"       => 'required',
