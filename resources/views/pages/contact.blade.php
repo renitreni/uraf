@@ -20,30 +20,79 @@
             <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
                 <h3>Get In Touch</h3>
                 <p class="mb-4">For assistance, repatriation, or welfare support, contact your nearest Migrant Workers Office. You can also submit a request through the <a href="{{ route('uraf.form') }}">URAF form</a>. For emergencies, call the MWO hotline in your host country.</p>
-                <form>
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <form method="POST" action="{{ route('contact.store') }}" novalidate>
+                    @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input
+                                    type="text"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    value="{{ old('name') }}"
+                                    required
+                                >
                                 <label for="name">Your Name</label>
+                                @error('name')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input
+                                    type="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Your Email"
+                                    value="{{ old('email') }}"
+                                    required
+                                >
                                 <label for="email">Your Email</label>
+                                @error('email')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                <input
+                                    type="text"
+                                    class="form-control @error('subject') is-invalid @enderror"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    value="{{ old('subject') }}"
+                                    required
+                                >
                                 <label for="subject">Subject</label>
+                                @error('subject')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 250px"></textarea>
+                                <textarea
+                                    class="form-control @error('message') is-invalid @enderror"
+                                    placeholder="Leave a message here"
+                                    id="message"
+                                    name="message"
+                                    style="height: 250px"
+                                    required
+                                >{{ old('message') }}</textarea>
                                 <label for="message">Message</label>
+                                @error('message')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
