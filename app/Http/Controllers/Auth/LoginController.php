@@ -13,8 +13,12 @@ class LoginController extends Controller
     /**
      * Show the login form.
      */
-    public function showLoginForm(): View
+    public function showLoginForm(): View|RedirectResponse
     {
+        if (Auth::check()) {
+            return redirect()->route('admin');
+        }
+
         return view('auth.login');
     }
 
