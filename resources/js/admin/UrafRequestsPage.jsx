@@ -143,6 +143,7 @@ function UrafRequestsPage() {
                                         <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Name</th>
                                         <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Contact</th>
                                         <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Date</th>
+                                        <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Location</th>
                                         <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Uploads</th>
                                         <th className="px-4 py-3 text-left text-xs font-medium text-stone-600 uppercase">Actions</th>
                                     </tr>
@@ -159,6 +160,24 @@ function UrafRequestsPage() {
                                                 {row.phone_no && <div className="text-stone-600">{row.phone_no}</div>}
                                             </td>
                                             <td className="px-4 py-3 text-sm text-stone-600">{new Date(row.created_at).toLocaleDateString()}</td>
+                                            <td className="px-4 py-3 text-sm text-stone-700">
+                                                {row.location_abroad ? (
+                                                    <a
+                                                        href={
+                                                            row.location_lat != null && row.location_lng != null
+                                                                ? `https://www.google.com/maps?q=${row.location_lat},${row.location_lng}`
+                                                                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(row.location_abroad)}`
+                                                        }
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-blue-600 hover:text-blue-800 hover:underline"
+                                                    >
+                                                        {row.location_abroad}
+                                                    </a>
+                                                ) : (
+                                                    '—'
+                                                )}
+                                            </td>
                                             <td className="px-4 py-3 text-sm">
                                                 <div className="flex flex-col gap-1">
                                                     <FilePreview url={row.upload_1_url} label="File 1" />
